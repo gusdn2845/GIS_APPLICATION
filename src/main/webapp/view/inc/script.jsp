@@ -22,6 +22,7 @@
 <script type="text/javascript" src="/resources/js/map/lib/ol.js"></script>
 <script type="text/javascript" src="/resources/js/map/global.js"></script>
 
+<script type="text/javascript" src="/resources/js/map/commonClass/jusoSearch.js"></script>
 <script type="text/javascript" src="/resources/js/map/commonClass/valueCheck.js"></script>
 <script type="text/javascript" src="/resources/js/map/commonClass/fileCheck.js"></script>
 
@@ -56,3 +57,4 @@
 <script type="text/javascript" src="/resources/js/map/mapClass/Map.js"></script>
 <script type="text/javascript" src="/resources/js/map/ClassInit.js"></script>
 <script type="text/javascript" src="/resources/js/map/buttonInit.js"></script>
+<script type="text/javascript" src="/resources/js/map/eventInit.js"></script>

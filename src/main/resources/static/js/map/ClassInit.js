@@ -18,6 +18,7 @@ let olHyun = {};
     olHyun.feature = new Feature();
     olHyun.feature.point = new Point();
     olHyun.feature.marker = new Marker();
+    olHyun.address = new Address();
 
     setTimeout(() => olHyun.mapStartView(option), 300);
 })();

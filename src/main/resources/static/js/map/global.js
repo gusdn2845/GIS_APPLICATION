@@ -1,7 +1,7 @@
 const option = {
     center : [129.09178415274442, 35.19787360894283],
     zoom : 10,
-    vworldApiKey : "BA051B3E-9802-3B97-9881-B13D3E6AAFCE",
+    vworldApiKey : "4265BC33-4C50-3691-8E25-3C4E7AE9BCE3",
     vworldApiURL : "https://xdworld.vworld.kr/2d/",
     target : "map",
     baseType : ["Vworld","Naver","Google","OSM","BaroEmap","Daum"],
