@@ -4,21 +4,10 @@
             let value = $('#selBaseMapChg').val();
             olHyun.changeBaseMap(value);
         });
-
-        $('#divMapType').click((t) => {
-            $('#divMapType p').removeClass('on');
-            let id = $('.' + t.target.className).parents('.card');
-            console.log(id);
-        });
-        // $('#divBaseMap').click(() => {
-        //     $('#divMapType p').removeClass('on');
-        //     let value = $('#selBaseMapChg').val();
-        //     olHyun.changeBaseMap(value);
-        // });
-        //
-        // $('#divAirMap').click(() => {
-        //     $('#divMapType p').removeClass('on');
-        //     olHyun.changeBaseMap("VworldSatellite");
-        // });
     }, 300);
 })();
+
+/*일반 및 위성 맵으로 변경*/
+function changeMapType(type){
+    olHyun.changeBaseMap(type);
+}

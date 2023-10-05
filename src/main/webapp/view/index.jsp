@@ -29,15 +29,15 @@
                 <option value="GoogleRoad">구글지도</option>
             </select>
 
-            <div id="divMapType">
-                <div id="divBaseMap" class="card" style="cursor:pointer;width: 50px; height:50px; z-index: 9999; position: absolute; right: 3.5%;top:70px;">
+            <div>
+                <div onclick="changeMapType($('#selBaseMapChg').val(), this.id);" class="card" style="cursor:pointer;width: 50px; height:50px; z-index: 9999; position: absolute; right: 3.5%;top:70px;">
                     <img src="/resources/images/icon_baseMap.png" class="card-img-top" alt="..." style="height: 35px;">
                     <div class="card-body" style="text-align: center;padding: 0 0 0">
                         <p class="card-text on">일반</p>
                     </div>
                 </div>
 
-                <div id="divAirMap" class="card" style="cursor:pointer;width: 50px; height:50px; z-index: 9999; position: absolute; right: 10px;top:70px;">
+                <div onclick="changeMapType('VworldSatellite', this.id);" class="card" style="cursor:pointer;width: 50px; height:50px; z-index: 9999; position: absolute; right: 10px;top:70px;">
                     <img src="/resources/images/icon_airPhoto.png" class="card-img-top" alt="..." style="height: 35px;">
                     <div class="card-body" style="text-align: center;padding: 0 0 0">
                         <p class="card-text">위성</p>
