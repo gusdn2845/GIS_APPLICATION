@@ -4,3 +4,26 @@
 #divMapType p.on{color:#0d6efd}
 
 .divPagination a{color:black}
+
+
+.scrollbar {
+    overflow-y: scroll; /*  */
+}
+
+/* 스크롤바의 폭 너비 */
+.scrollbar::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background: rgb(89, 89, 89); /* 스크롤바 색상 */
+    border-radius: 10px; /* 스크롤바 둥근 테두리 */
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background: rgb(0, 70, 255);  /*스크롤바 뒷 배경 색상*/
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background: rgb(178, 178, 178);  /*스크롤바 뒷 배경 색상*/
+}

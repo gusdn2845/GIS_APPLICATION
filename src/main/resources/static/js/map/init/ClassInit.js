@@ -1,4 +1,6 @@
 let olHyun = {};
+let tool = {};
+
 (() => {
     olHyun = new Map();
     olHyun.view = new View();
@@ -20,5 +22,6 @@ let olHyun = {};
     olHyun.feature.marker = new Marker();
     olHyun.address = new Address();
 
+    tool.pagination = new Pagination();
     setTimeout(() => olHyun.mapStartView(option), 300);
 })();

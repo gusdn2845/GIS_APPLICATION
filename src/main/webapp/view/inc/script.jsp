@@ -25,6 +25,7 @@
 <script type="text/javascript" src="/resources/js/map/commonClass/jusoSearch.js"></script>
 <script type="text/javascript" src="/resources/js/map/commonClass/valueCheck.js"></script>
 <script type="text/javascript" src="/resources/js/map/commonClass/fileCheck.js"></script>
+<script type="text/javascript" src="/resources/js/map/commonClass/Pagination.js"></script>
 
 <script type="text/javascript" src="/resources/js/map/featureClass/Feature.js"></script>
 <script type="text/javascript" src="/resources/js/map/featureClass/Point.js"></script>
@@ -55,6 +56,8 @@
 <script type="text/javascript" src="/resources/js/map/mapClass/Overlay.js"></script>
 <script type="text/javascript" src="/resources/js/map/mapClass/MapHistory.js"></script>
 <script type="text/javascript" src="/resources/js/map/mapClass/Map.js"></script>
-<script type="text/javascript" src="/resources/js/map/ClassInit.js"></script>
-<script type="text/javascript" src="/resources/js/map/buttonInit.js"></script>
-<script type="text/javascript" src="/resources/js/map/eventInit.js"></script>
+
+<script type="text/javascript" src="/resources/js/map/init/ClassInit.js"></script>
+<script type="text/javascript" src="/resources/js/map/init/buttonInit.js"></script>
+<script type="text/javascript" src="/resources/js/map/init/eventInit.js"></script>
+

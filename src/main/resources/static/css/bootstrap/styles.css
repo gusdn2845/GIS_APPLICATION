@@ -7047,7 +7047,7 @@ textarea.form-control-lg {
 }
 
 .d-flex {
-  display: flex !important;
+  /*display: flex !important;*/
 }
 
 .d-inline-flex {
