@@ -1,4 +1,4 @@
-class Map{
+class OLMap{
     constructor() {
     }
 
@@ -42,13 +42,13 @@ class Map{
                     this.baroEmap = new BaroEmap();
                     break;
                 case "OSM":
-                    this.osm = new OpenStreetMap();
+                    //this.osm = new OpenStreetMap();
                     break;
                 case "Google":
                     this.google = new GoogleMap();
                     break;
                 case "Naver":
-                    this.naver = new NaverMap();
+                    //this.naver = new NaverMap();
                     break;
                 default:
                     break;

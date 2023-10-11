@@ -2,7 +2,7 @@ let olHyun = {};
 let tool = {};
 
 (() => {
-    olHyun = new Map();
+    olHyun = new OLMap();
     olHyun.view = new View();
     olHyun.wms = new Wms();
     olHyun.wfs = new Wfs();

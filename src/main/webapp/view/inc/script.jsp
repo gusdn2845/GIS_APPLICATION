@@ -1,20 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-<link href="/resources/css/bootstrap/styles.css" rel="stylesheet" />
+<script type="text/javascript" src="/resources/js/map/lib/jquery-3.6.0.min.js"></script>
+
+<link href="/resources/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
 <link href="/resources/css/map/map.css" rel="stylesheet" />
 
-<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<%--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>--%>
-<script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+<script src="/resources/js/bootstrap/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/shpjs@4.0.4/dist/shp.js"></script>
 
-<%--<script src="/resources/js/bootstrap/chart-area-demo.js"></script>--%>
-<%--<script src="/resources/js/bootstrap/chart-bar-demo.js"></script>--%>
-<script src="/resources/js/bootstrap/datatables-simple-demo.js"></script>
-<script src="/resources/js/bootstrap/scripts.js"></script>
-
-<script type="text/javascript" src="/resources/js/map/lib/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/resources/js/map/lib/fileSaver.js"></script>
 <script type="text/javascript" src="/resources/js/map/lib/proj4.js"></script>
 

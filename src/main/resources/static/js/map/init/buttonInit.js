@@ -9,6 +9,16 @@
         $('#btnNavbarSearch').click(() => {
             olHyun.address.search(1);
         });
+
+        /* SHP 미리보기 버튼 */
+        // $('#btnShpUpload').click(() => {
+        //     $('#formShpUpload').submit((e) => {
+        //        e.preventDefault();
+        //     });
+        //     $('#formShpUpload').submit();
+        //
+        //     console.log('123');
+        // });
     }, 300);
 })();
 
