@@ -21,6 +21,7 @@ let tool = {};
     olHyun.feature.point = new Point();
     olHyun.feature.marker = new Marker();
     olHyun.address = new Address();
+    olHyun.alert = new Alert();
 
     tool.pagination = new Pagination();
     setTimeout(() => olHyun.mapStartView(option), 300);

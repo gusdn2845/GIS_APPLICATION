@@ -2,9 +2,10 @@
 
 <script type="text/javascript" src="/resources/js/map/lib/jquery-3.6.0.min.js"></script>
 
-<link href="/resources/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+<link href="/resources/css/bootstrap/bootstrap.css" rel="stylesheet" />
 <link href="/resources/css/map/map.css" rel="stylesheet" />
 
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"></script>
 <script src="/resources/js/bootstrap/bootstrap.min.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/shpjs@4.0.4/dist/shp.js"></script>
 
@@ -19,6 +20,7 @@
 <script type="text/javascript" src="/resources/js/map/commonClass/valueCheck.js"></script>
 <script type="text/javascript" src="/resources/js/map/commonClass/fileCheck.js"></script>
 <script type="text/javascript" src="/resources/js/map/commonClass/Pagination.js"></script>
+<script type="text/javascript" src="/resources/js/map/commonClass/alert.js"></script>
 
 <script type="text/javascript" src="/resources/js/map/featureClass/Feature.js"></script>
 <script type="text/javascript" src="/resources/js/map/featureClass/Point.js"></script>

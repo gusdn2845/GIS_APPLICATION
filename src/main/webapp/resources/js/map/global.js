@@ -9,7 +9,7 @@ const option = {
     projection : "EPSG:900913"
 }
 
-const projectURL = "http://localhost:8080/";
+const projectURL = "http://localhost:8080";
 const VWORLD_WMS_URL = "http://api.vworld.kr/req/wms?";
 // const engineURL = "http://seesunit.iptime.org:8194/G2DataService/GService?";
 // const engineURL = "http://seesunit.iptime.org:18995/G2DataService/GService?";

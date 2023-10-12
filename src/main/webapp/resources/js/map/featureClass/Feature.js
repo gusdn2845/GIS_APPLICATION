@@ -35,4 +35,10 @@ class Feature{
     removeFeature(source, feature){
         source.removeFeature(feature);
     }
+
+    moveFeature(feature){
+        let center = ol.extent.getCenter(feature.getGeometry().getExtent());
+        olHyun.view.setCenter(center);
+        olHyun.view.setZoom(19);
+    }
 }

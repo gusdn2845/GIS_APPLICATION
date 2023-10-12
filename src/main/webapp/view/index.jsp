@@ -23,44 +23,11 @@
         <div id="map">
             <c:import url="inc/baseMap.jsp"/>
             <c:import url="inc/modal.jsp"/>
+            <c:import url="inc/offcanvas.jsp"/>
         </div>
     </div>
 </body>
 
 <script>
-    $('#inpShpFile').change((e) => {
-       console.log(e.target);
-       console.log(e.target.value);
-       let filename = e.target.files[0].name;
-       let extIdx = e.target.files[0].name.lastIndexOf('.');
-       let ext = filename.substring(extIdx + 1, filename.length).toLowerCase();
-
-       if(ext === "zip"){
-           // let fReader = new FileReader();
-           // fReader.readAsDataURL($('#inpShpFile')[0].files[0]);
-           // fReader.onloadend = function(event){
-           //     console.log(event.target.result);
-           //
-           //     let source = olHyun.source.createOlSource();
-           //     olHyun.map.addLayer(olHyun.layer.createOlLayer({id: "vectorLayer", source: source}, "Vector"));
-           //     // shp('http://localhost:8080/resources/shp/부산광역시_맛집 정보(SHP)_20230921.zip').then(function(geojson) {
-           //     // shp('D:/혀뉴찡/git/GIS_APP/부산광역시_맛집 정보(SHP)_20230921.zip').then(function(geojson) {
-           //     shp('file://D:/testShp.zip').then(function(geojson) {
-           //         let feature = new ol.format.GeoJSON({featureProjection: "EPSG:900913"}).readFeatures(geojson);
-           //         source.addFeatures(feature);
-           //     });
-           // }
-       }else{
-           $('#inpShpFile').val('');
-           $('.alert-danger').html("ZIP파일만 등록 가능합니다.");
-           $('.alert-danger').fadeIn(500);
-
-           setTimeout(() => $('.alert-danger').fadeOut(500), 3000);
-       }
-    });
-
-    function shpReaderTest(){
-
-    }
 </script>
 </html>
