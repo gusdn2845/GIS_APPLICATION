@@ -1,8 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!-- 경고 alert -->
-<div class="alert alert-danger position-absolute start-50 translate-middle shadow-lg p-3 mb-5 bg-body-tertiary rounded" role="alert" style="display:none;z-index: 9999;">
-</div>
-
 <!-- SHP 파일등록 -->
 <div class="modal fade" id="divShpModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="shpModalLabel" aria-hidden="true">
     <form id="formShpUpload" action="fileUpload" method="post" enctype="multipart/form-data">

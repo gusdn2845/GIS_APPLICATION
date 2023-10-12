@@ -8,6 +8,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"></script>
 <script src="/resources/js/bootstrap/bootstrap.min.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/shpjs@4.0.4/dist/shp.js"></script>
+<script src="/resources/js/map/lib/encoding.js"></script>
 
 <script type="text/javascript" src="/resources/js/map/lib/fileSaver.js"></script>
 <script type="text/javascript" src="/resources/js/map/lib/proj4.js"></script>

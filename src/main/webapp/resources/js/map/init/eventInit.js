@@ -15,6 +15,7 @@
             if(ext !== "zip"){
                 $('#file').val('');
                 olHyun.alert.danger("ZIP파일만 등록 가능합니다.");
+                return;
             }
         });
     }, 300);

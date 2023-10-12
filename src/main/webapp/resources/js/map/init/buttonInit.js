@@ -36,11 +36,10 @@ function shpFileUpload(){
             let layer = olHyun.layer.searchLayerById("vectorLayer");
             if(layer) olHyun.map.removeLayer(layer);
 
-
             shp(projectURL + result).then(function(geojson) {
                 let source = olHyun.source.createOlSource();
                 olHyun.map.addLayer(olHyun.layer.createOlLayer({id: "vectorLayer", source: source}, "Vector"));
-                let feature = new ol.format.GeoJSON({featureProjection: "EPSG:900913"}).readFeatures(geojson);
+                let feature = new ol.format.GeoJSON({featureProjection: olHyun.view.getProjection()}).readFeatures(geojson);
 
                 feature.forEach((item, index) => {
                    item.setId(index);
@@ -51,10 +50,13 @@ function shpFileUpload(){
                 $('#divShpModal').modal('hide');
                 new bootstrap.Offcanvas('.offcanvas').show();
                 $('#spanShpPreviewDataCnt').html(`(건수 : ${feature.length})`);
+                $('#divLoadAlert').fadeOut(500);
             }).catch(e => {
                 console.log(e);
-                olHyun.alert.danger("잘못된 파일입니다.")
+                olHyun.alert.danger("잘못된 파일입니다.");
             });
+
+            olHyun.alert.loadAlert("데이터 로딩중입니다.");
         },error : (e) => console.log(e)
     });
 }

@@ -22,6 +22,7 @@
 <%--        <c:import url="inc/sideNav.jsp"/>--%>
         <div id="map">
             <c:import url="inc/baseMap.jsp"/>
+            <c:import url="inc/alert.jsp"/>
             <c:import url="inc/modal.jsp"/>
             <c:import url="inc/offcanvas.jsp"/>
         </div>

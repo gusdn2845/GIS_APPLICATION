@@ -7,4 +7,9 @@ class Alert{
 
         setTimeout(() => $('.alert-danger').fadeOut(500), 3000);
     }
+
+    loadAlert(context){
+        $('#spanLoadingAlertMsg').html(context);
+        $('#divLoadAlert').show();
+    }
 }
