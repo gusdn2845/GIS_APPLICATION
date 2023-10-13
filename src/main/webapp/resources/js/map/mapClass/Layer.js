@@ -3,7 +3,7 @@ class Layer{
         let layerArr = this.getLayerList();
 
         for(let i = 0 ; i < layerArr.length; i++){
-            if(layerArr[i].get("id") == id){
+            if(layerArr[i].get("id") === id){
                 return layerArr[i];
             }
         }

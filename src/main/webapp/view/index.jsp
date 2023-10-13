@@ -21,7 +21,7 @@
         <!-- 왼쪽 네비게이션바-->
 <%--        <c:import url="inc/sideNav.jsp"/>--%>
         <div id="map">
-            <c:import url="inc/baseMap.jsp"/>
+            <c:import url="inc/mapButton.jsp"/>
             <c:import url="inc/alert.jsp"/>
             <c:import url="inc/modal.jsp"/>
             <c:import url="inc/offcanvas.jsp"/>

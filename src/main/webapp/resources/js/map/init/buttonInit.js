@@ -14,6 +14,22 @@
         $('#btnShpUpload').click(() => {
             shpFileUpload();
         });
+
+        /* SHP 미리보기 GeoJSON 추출*/
+        $('#btnConvertGeoJson').click(() => {
+            let blob = new Blob([new ol.format.GeoJSON().writeFeatures(olHyun.layer.searchLayerById('vectorLayer').getSource().getFeatures())], { type: 'text/plain' });
+            let objURL = window.URL.createObjectURL(blob);
+
+            // 이전에 생성된 메모리 해제
+            if (window.__Xr_objURL_forCreatingFile__) {
+                window.URL.revokeObjectURL(window.__Xr_objURL_forCreatingFile__);
+            }
+            window.__Xr_objURL_forCreatingFile__ = objURL;
+            let elem = document.createElement('a');
+            elem.download = $('#inpShpName').val() + ".json";
+            elem.href = objURL;
+            elem.click();
+        });
     }, 300);
 })();
 
@@ -36,9 +52,29 @@ function shpFileUpload(){
             let layer = olHyun.layer.searchLayerById("vectorLayer");
             if(layer) olHyun.map.removeLayer(layer);
 
-            shp(projectURL + result).then(function(geojson) {
+            shp("http://localhost:8080/resources/shpTemp/" + uploadFileName).then(function(geojson) {
                 let source = olHyun.source.createOlSource();
-                olHyun.map.addLayer(olHyun.layer.createOlLayer({id: "vectorLayer", source: source}, "Vector"));
+                olHyun.map.addLayer(olHyun.layer.createOlLayer({
+                    id: "vectorLayer",
+                    source: source,
+                    style: new ol.style.Style({
+                        fill: new ol.style.Fill({
+                            color: 'rgba(255, 0, 0, 0.3)',
+                        }),
+                        stroke: new ol.style.Stroke({
+                            color: 'rgba(255, 0, 0, 1)',
+                            width: 2
+                        }),
+                        image: new ol.style.Circle({
+                            radius: 3,
+                            fill: new ol.style.Fill({
+                                color: 'rgba(0, 153, 255, 0.8)'
+                            }),
+                            stroke: new ol.style.Stroke({
+                                color: 'rgba(255, 0, 0, 0.8)'
+                            })
+                        })
+                    })}, "Vector"));
                 let feature = new ol.format.GeoJSON({featureProjection: olHyun.view.getProjection()}).readFeatures(geojson);
 
                 feature.forEach((item, index) => {
@@ -82,7 +118,11 @@ function makeShpPreviewData(data){
             .forEach((col) => {
                 let itemData = item.getProperties()[col] ? item.getProperties()[col] : " - ";
 
-                tbodyContext += `<td data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="${itemData}" class="text-truncate" style="text-overflow: ellipsis; white-space: nowrap; max-width: 50px;text-align: center;">
+                // tbodyContext += `<td data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="${itemData}" class="text-truncate" style="text-overflow: ellipsis; white-space: nowrap; max-width: 50px;text-align: center;">
+                //     ${itemData}
+                // </td>`;
+
+                tbodyContext += `<td class="text-truncate" style="text-overflow: ellipsis; white-space: nowrap; max-width: 50px;text-align: center;">
                     ${itemData}
                 </td>`;
             });

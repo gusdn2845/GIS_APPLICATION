@@ -11,6 +11,7 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="file" class="form-label"><p class="text-danger">ZIP 파일만 등록 가능합니다.</p></label>
+                        <input type="hidden" id="inpShpName"/>
                         <input class="form-control" type="file" id="file" name="file" accept=".zip">
                     </div>
                 </div>
