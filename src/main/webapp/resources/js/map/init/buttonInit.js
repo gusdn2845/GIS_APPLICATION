@@ -41,6 +41,12 @@ function changeMapType(type){
 /* SHP 미리보기 파일 업로드 */
 function shpFileUpload(){
     let formData = new FormData($('#formShpUpload')[0]);
+    let fileCheck = $('#inpShpName').val();
+
+    if(!fileCheck) {
+        olHyun.alert.danger("등록된 파일이 없습니다.");
+        return;
+    }
 
     $.ajax({
         url : "fileUpload",
@@ -52,7 +58,7 @@ function shpFileUpload(){
             let layer = olHyun.layer.searchLayerById("vectorLayer");
             if(layer) olHyun.map.removeLayer(layer);
 
-            shp("http://localhost:8080/resources/shpTemp/" + uploadFileName).then(function(geojson) {
+            shp("http://localhost:8080/resources/shpTemp/" + result).then(function(geojson) {
                 let source = olHyun.source.createOlSource();
                 olHyun.map.addLayer(olHyun.layer.createOlLayer({
                     id: "vectorLayer",
@@ -85,7 +91,7 @@ function shpFileUpload(){
                 makeShpPreviewData(feature);
                 $('#divShpModal').modal('hide');
                 new bootstrap.Offcanvas('.offcanvas').show();
-                $('#spanShpPreviewDataCnt').html(`(건수 : ${feature.length})`);
+                $('#spanShpPreviewDataCnt').html(`(파일명 : ${$('#inpShpName').val()}, 건수 : ${feature.length})`);
                 $('#divLoadAlert').fadeOut(500);
             }).catch(e => {
                 console.log(e);

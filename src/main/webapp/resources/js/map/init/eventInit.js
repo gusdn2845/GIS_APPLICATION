@@ -1,3 +1,4 @@
+let reader = null;
 (() => {
     setTimeout(() => {
         $('#inpKeyword').keyup((e) => {
@@ -21,4 +22,3 @@
         });
     }, 300);
 })();
-

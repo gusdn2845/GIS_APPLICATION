@@ -19,7 +19,7 @@ public class FileController {
     @PostMapping("/fileUpload")
     @ResponseBody
     public String fileUpload(HttpServletRequest req, @RequestParam("file") MultipartFile file) throws IOException {
-        String path = UPLOAD_PATH;
+        String path = req.getServletContext().getRealPath(UPLOAD_PATH);
         String fileName = file.getOriginalFilename();
         String fileExt = fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length());
         File dir = new File(path);
