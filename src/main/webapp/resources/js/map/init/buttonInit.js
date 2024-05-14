@@ -30,6 +30,11 @@
             elem.href = objURL;
             elem.click();
         });
+
+        /* GEO JSON 파일 읽기 */
+        $('#btnGeoJson').click(() => {
+            geoJsonFileUpload();
+        });
     }, 300);
 })();
 
@@ -54,56 +59,100 @@ function shpFileUpload(){
         data : formData,
         contentType : false,
         processData : false,
+        async: false,
         success : (result) => {
             let layer = olHyun.layer.searchLayerById("vectorLayer");
             if(layer) olHyun.map.removeLayer(layer);
 
-            shp("http://localhost:8080/resources/shpTemp/" + result).then(function(geojson) {
-                let source = olHyun.source.createOlSource();
-                olHyun.map.addLayer(olHyun.layer.createOlLayer({
-                    id: "vectorLayer",
-                    source: source,
-                    style: new ol.style.Style({
-                        fill: new ol.style.Fill({
-                            color: 'rgba(255, 0, 0, 0.3)',
-                        }),
-                        stroke: new ol.style.Stroke({
-                            color: 'rgba(255, 0, 0, 1)',
-                            width: 2
-                        }),
-                        image: new ol.style.Circle({
-                            radius: 3,
+            try{
+                shp(FILE_PATH + result).then(function(geojson) {
+                    let source = olHyun.source.createOlSource();
+                    olHyun.map.addLayer(olHyun.layer.createOlLayer({
+                        id: "vectorLayer",
+                        source: source,
+                        style: new ol.style.Style({
                             fill: new ol.style.Fill({
-                                color: 'rgba(0, 153, 255, 0.8)'
+                                color: 'rgba(255, 0, 0, 0.3)',
                             }),
                             stroke: new ol.style.Stroke({
-                                color: 'rgba(255, 0, 0, 0.8)'
+                                color: 'rgba(255, 0, 0, 1)',
+                                width: 2
+                            }),
+                            image: new ol.style.Circle({
+                                radius: 3,
+                                fill: new ol.style.Fill({
+                                    color: 'rgba(0, 153, 255, 0.8)'
+                                }),
+                                stroke: new ol.style.Stroke({
+                                    color: 'rgba(255, 0, 0, 0.8)'
+                                })
                             })
-                        })
-                    })}, "Vector"));
-                let feature = new ol.format.GeoJSON({featureProjection: olHyun.view.getProjection()}).readFeatures(geojson);
+                        })}, "Vector"));
+                    let feature = new ol.format.GeoJSON({featureProjection: olHyun.view.getProjection()}).readFeatures(geojson);
 
-                feature.forEach((item, index) => {
-                   item.setId(index);
+                    feature.forEach((item, index) => {
+                        item.setId(index);
+                    });
+
+                    source.addFeatures(feature);
+                    makeShpPreviewData(feature);
+                    $('#divShpModal').modal('hide');
+                    new bootstrap.Offcanvas('.offcanvas').show();
+                    $('#spanShpPreviewDataCnt').html(`(파일명 : ${$('#inpShpName').val()}, 건수 : ${feature.length})`);
+                    $('#divLoadAlert').fadeOut(500);
+                }).catch(e => {
+                    console.log(e);
+                    olHyun.alert.endLoadAlert();
+                    olHyun.alert.danger("잘못된 파일입니다.");
                 });
 
-                source.addFeatures(feature);
-                makeShpPreviewData(feature);
-                $('#divShpModal').modal('hide');
-                new bootstrap.Offcanvas('.offcanvas').show();
-                $('#spanShpPreviewDataCnt').html(`(파일명 : ${$('#inpShpName').val()}, 건수 : ${feature.length})`);
-                $('#divLoadAlert').fadeOut(500);
-            }).catch(e => {
+                olHyun.alert.loadAlert("데이터 로딩중입니다.");
+            }catch(e){
                 console.log(e);
-                olHyun.alert.danger("잘못된 파일입니다.");
-            });
+            }
+        },error : (e) => console.log(e)
+    });
+}
 
+/* GEO JSON 파일 업로드 */
+function geoJsonFileUpload(){
+    let formData = new FormData($('#formGeoJsonUpload')[0]);
+    let fileCheck = $('#jsonFile')[0].files.length;
+
+    if(!fileCheck) {
+        olHyun.alert.danger("등록된 파일이 없습니다.");
+        return;
+    }
+
+    $.ajax({
+        url : "fileUpload",
+        type : "post",
+        data : formData,
+        contentType : false,
+        processData : false,
+        success : (result) => {
+            console.log(result);
             olHyun.alert.loadAlert("데이터 로딩중입니다.");
+
+            fetch(FILE_PATH + result)
+                .then(response => {
+                    console.log(response);
+                    if(!response.ok){
+                        throw new Error("Failed to Load JSON File");
+                    }
+                    return response.json();
+                })
+                .then(jsonData => {
+                    console.log(jsonData);
+                })
+                .catch(error => console.log(error))
+                .finally(() => olHyun.alert.endLoadAlert())
         },error : (e) => console.log(e)
     });
 }
 
 function makeShpPreviewData(data){
+    console.log(data);
     let columns = Object.keys(data[0].getProperties());
     let theadContext = "";
     let tbodyContext = "";

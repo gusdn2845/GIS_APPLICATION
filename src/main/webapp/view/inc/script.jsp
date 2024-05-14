@@ -7,7 +7,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"></script>
 <script src="/resources/js/bootstrap/bootstrap.min.js" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/shpjs@4.0.4/dist/shp.js"></script>
+<script src="https://unpkg.com/shpjs@latest/dist/shp.js"></script>
 <script src="/resources/js/map/lib/encoding.js"></script>
 
 <script type="text/javascript" src="/resources/js/map/lib/fileSaver.js"></script>
@@ -15,13 +15,15 @@
 
 <script type="text/javascript" src="/resources/js/map/lib/jscolor.min.js"></script>
 <script type="text/javascript" src="/resources/js/map/lib/ol.js"></script>
+<script type="text/javascript" src="/resources/js/map/lib/jquery.blockUI.js"></script>
+
 <script type="text/javascript" src="/resources/js/map/global.js"></script>
 
-<script type="text/javascript" src="/resources/js/map/commonClass/jusoSearch.js"></script>
-<script type="text/javascript" src="/resources/js/map/commonClass/valueCheck.js"></script>
-<script type="text/javascript" src="/resources/js/map/commonClass/fileCheck.js"></script>
+<script type="text/javascript" src="/resources/js/map/commonClass/JusoSearch.js"></script>
+<script type="text/javascript" src="/resources/js/map/commonClass/ValueCheck.js"></script>
+<script type="text/javascript" src="/resources/js/map/commonClass/FileCheck.js"></script>
 <script type="text/javascript" src="/resources/js/map/commonClass/Pagination.js"></script>
-<script type="text/javascript" src="/resources/js/map/commonClass/alert.js"></script>
+<script type="text/javascript" src="/resources/js/map/commonClass/Alert.js"></script>
 
 <script type="text/javascript" src="/resources/js/map/featureClass/Feature.js"></script>
 <script type="text/javascript" src="/resources/js/map/featureClass/Point.js"></script>

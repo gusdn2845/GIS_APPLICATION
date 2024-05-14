@@ -9,7 +9,13 @@ class Alert{
     }
 
     loadAlert(context){
+        $('.modal').block({message: null});
         $('#spanLoadingAlertMsg').html(context);
         $('#divLoadAlert').show();
+    }
+
+    endLoadAlert(){
+        $('.modal').unblock();
+        $('#divLoadAlert').hide();
     }
 }

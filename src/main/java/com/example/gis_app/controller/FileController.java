@@ -21,7 +21,7 @@ public class FileController {
     public String fileUpload(HttpServletRequest req, @RequestParam("file") MultipartFile file) throws IOException {
         String path = req.getServletContext().getRealPath(UPLOAD_PATH);
         String fileName = file.getOriginalFilename();
-        String fileExt = fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length());
+        String fileExt = fileName.substring(fileName.lastIndexOf(".") + 1);
         File dir = new File(path);
 
         if(!FileHandler.exist(dir)){

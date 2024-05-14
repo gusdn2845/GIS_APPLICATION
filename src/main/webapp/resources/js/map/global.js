@@ -15,3 +15,5 @@ const VWORLD_WMS_URL = "http://api.vworld.kr/req/wms?";
 // const engineURL = "http://seesunit.iptime.org:18995/G2DataService/GService?";
 const engineURL = "http://seesunit.iptime.org:18989/geoserver/wfs?";
 // const engineURL = "http://121.140.127.82:7005/geoserver/ows?";
+
+const FILE_PATH = `/resources/temp/`;

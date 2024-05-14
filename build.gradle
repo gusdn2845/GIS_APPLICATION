@@ -35,6 +35,8 @@ dependencies {
     //JSP dependency 추가
     implementation 'javax.servlet:jstl'
     implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.3.3'
 
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 }

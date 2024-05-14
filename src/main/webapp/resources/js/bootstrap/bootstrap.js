@@ -840,7 +840,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap alert.js
+   * Bootstrap Alert.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
@@ -26,6 +26,15 @@
             <c:import url="inc/modal.jsp"/>
             <c:import url="inc/offcanvas.jsp"/>
         </div>
+    </div>
+
+    <div id="toolbar">
+        <button class="toolbar-btn" onclick="olHyun.zoom.ZoomIn();">
+            <img src="https://img.icons8.com/ios-filled/50/000000/plus-math.png" alt="Zoom In"/>
+        </button>
+        <button class="toolbar-btn" onclick="olHyun.zoom.ZoomOut();">
+            <img src="https://img.icons8.com/ios-filled/50/000000/minus-math.png" alt="Zoom Out"/>
+        </button>
     </div>
 </body>
 
